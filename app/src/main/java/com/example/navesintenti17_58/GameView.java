@@ -42,8 +42,12 @@ public class GameView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        // Load enemy spacecraft bitmap and scale it
+        Bitmap SpacecraftBitmapUpload = Bitmap.createScaledBitmap(spacecraftBitmap, 400, 400, false);
+
         // Draw user's spacecraft
-        canvas.drawBitmap(spacecraftBitmap, xPosition, getHeight() - spacecraftBitmap.getHeight(), null);
+        canvas.drawBitmap(SpacecraftBitmapUpload, xPosition, getHeight() - spacecraftBitmap.getHeight(), null);
+
 
         // Draw enemy spacecraft
         Iterator<EnemySpacecraft> iterator = enemySpacecraftList.iterator();
